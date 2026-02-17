@@ -1,3 +1,100 @@
+# Gestión de Usuarios - Laravel
+
+Proyecto CRUD desarrollado en Laravel.
+
+##  Requisitos
+
+- PHP 8.1 o superior
+- Composer
+- MySQL
+- XAMPP o servidor local
+
+## Instalacion
+
+1. Clonar repositorio:
+
+bash
+git clone https://github.com/EZRA981/CRUD-GestionDeUsuarios
+
+2. Entrar al proyecto
+
+cd GestionDeUsuarios
+
+3. Instalar dependencias
+
+composer install
+
+4. Copiar el archivo .env
+
+cp .env.example .env
+
+5. Configurar la base de datos
+
+Hay que modificar el archivo hhtpd-vhost
+
+C:\xampp\apache\conf\extra
+
+Y agregar estas dependencias para que nuetra base de datos del Xampp inicie con nuestro proyecto de Gestion de usuarios
+
+##<VirtualHost *:80>
+    DocumentRoot "C:\xampp\htdocs"
+    ServerName localhost
+##</VirtualHost>
+
+##<VirtualHost *:80>
+    DocumentRoot "C:\xampp\htdocs\laravel\GestionDeUsuarios\public"
+    ServerName GestionDeUsuarios.test
+##</VirtualHost>
+
+y el archivo host de nuestro equipo de computo, su direccion es:
+
+C:\Windows\System32\drivers\etc
+
+Donde tenemos que agregar las siguiente dirrecion IP y dirrecion que usara nuestro equipo
+para direccionar al proyecto.:
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+127.0.0.1 GestionDeUsuarios.test
+
+5. Generacion de claves
+
+php artisan key:generate
+
+6. Migracion con los seeder:
+
+php artisan migrate --seed
+
+7. Iniciar el servidor
+
+php artisan serve
+
+Funcionalidades del sistema:
+
+-Crear clientes
+
+-Editar clientes
+
+-Eliminar clientes
+
+-Ver detalles
+
+-Paginación
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
